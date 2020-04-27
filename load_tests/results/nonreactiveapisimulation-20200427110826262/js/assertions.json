@@ -1,0 +1,10 @@
+{
+  "simulation": "NonReactiveApiSimulation",
+  "simulationId": "nonreactiveapisimulation",
+  "start": 1587985706262,
+  "description": "",
+  "scenarios": ["PerfTestOfNonReactiveRestAPI"],
+  "assertions": [
+
+  ]
+}

@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  non-reactive-service:
+    ports:
+      - "8080:8080"
+    restart: always
+    image: githubcom/saiprasadkrishnamurthy/innovations/non-reactive-service:1.0-SNAPSHOT
+  reactive-service:
+    ports:
+      - "8081:8081"
+    restart: always
+    image: githubcom/saiprasadkrishnamurthy/innovations/reactive-service:1.0-SNAPSHOT
+  non-reactive-perf-test:
+    restart: "no"
+    image: denvazh/gatling
+    volumes:
+      - /Users/saiprasadkrishnamurthy/perf/load_tests:/opt/gatling/user-files
+      - /Users/saiprasadkrishnamurthy/perf/load_tests/results:/opt/gatling/results
+    command: [-s, NonReactiveApiSimulation]
+  reactive-perf-test:
+    restart: "no"
+    image: denvazh/gatling
+    volumes:
+      - /Users/saiprasadkrishnamurthy/perf/load_tests:/opt/gatling/user-files
+      - /Users/saiprasadkrishnamurthy/perf/load_tests/results:/opt/gatling/results
+    command: [-s, ReactiveApiSimulation]
+    depends_on:
+      - reactive-service
+      - non-reactive-service

@@ -1,0 +1,10 @@
+{
+  "simulation": "ReactiveApiSimulation",
+  "simulationId": "reactiveapisimulation",
+  "start": 1587985706241,
+  "description": "",
+  "scenarios": ["PerfTestOfReactiveRestAPI"],
+  "assertions": [
+
+  ]
+}
