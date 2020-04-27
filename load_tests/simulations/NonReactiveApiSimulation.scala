@@ -3,7 +3,7 @@ import io.gatling.http.Predef._
 import scala.concurrent.duration._
 
 /**
-    Simulates the load tests for a reactive API.
+    Simulates the load tests for a non-reactive API.
     @author Sai.
 **/
 
